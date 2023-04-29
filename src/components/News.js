@@ -8,7 +8,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const News = (props) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);                          
   const [totalResults, setTotalResults] = useState(0);
 
   const capitalizeFirstLetter = (string) => {
@@ -32,7 +32,7 @@ const News = (props) => {
   useEffect(() => {
     document.title = `${capitalizeFirstLetter(props.category)} - News-App`;
     updateNews();
-    // eslint-disable-next-line
+    // eslint-disable-next-line  
   }, []);
 
   const fetchMoreData = async () => {
@@ -65,7 +65,7 @@ const News = (props) => {
       >
         <div className="container">
           <div className="row">
-            {articles.map((element) => {
+            {articles && articles.length > 0 &&articles.map((element) => {
               return (
                 <div className="col-md-4" key={element.url}>
                   <NewsItem

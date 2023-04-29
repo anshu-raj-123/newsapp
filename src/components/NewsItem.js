@@ -3,7 +3,7 @@ import React from 'react'
 const NewsItem = (props)=> {
         let { title, description, imageUrl, newsUrl, author, date, source } = props;
         return (
-            <div className="my-3">
+            <div className="my-4">
                 <div className="card">
                     <div style={{
                         display: 'flex',
